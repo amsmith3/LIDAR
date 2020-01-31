@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import *
+from PC.start import Start
 
 # initialize main window
 main_window = tkinter.Tk()
@@ -7,7 +8,7 @@ main_window.title("Remote LIDAR")
 main_window.minsize(250, 100)
 
 # initialize buttons
-button_start = tkinter.Button(main_window, text="Start")
+button_start = tkinter.Button(main_window, text="Start", command=Start.start)
 button_stop = tkinter.Button(main_window, text="Stop")
 
 button_start.config(height=1, width=15)
