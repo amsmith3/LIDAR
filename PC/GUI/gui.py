@@ -5,7 +5,7 @@ from PC.start import Start
 from PC.stop import Stop
 
 
-class GUI():
+class GUI:
 
     def __init__(self):
         self.start_thread = None
