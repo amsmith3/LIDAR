@@ -12,14 +12,21 @@ class Conversion:
             y = r * np.sin(theta)
             return x, y
 
-        while not os.path.exists('polar_coordinates.txt'):
+
+
+        while not os.path.exists('C:/Users/alexm/PycharmProjects/LIDAR/PC/Conversion/polar_coordinates.txt'):
             continue
 
-        with open('polar_coordinates.txt') as file:
-            cordinate_list = file.read().splitlines()
+        with open('C:/Users/alexm/PycharmProjects/LIDAR/PC/Conversion/polar_coordinates.txt') as file:
+            coordinate_list = file.read().splitlines()
 
-            f = open('cart_cord.txt', 'w')
-            for cord in cordinate_list:
+            while not coordinate_list:
+                coordinate_list = file.read().splitlines()
+
+            print('Starting Conversion')
+
+            f = open('C:/Users/alexm/PycharmProjects/LIDAR/PC/Conversion/cart_cord.txt', 'w')
+            for cord in coordinate_list:
                 polar_cord = cord.split(" ")
 
                 theta = int(polar_cord[0])
