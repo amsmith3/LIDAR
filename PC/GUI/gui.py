@@ -18,15 +18,17 @@ class GUI:
         self.main_window.minsize(250, 100)
 
         # initialize buttons
-        button_start = tkinter.Button(self.main_window, text="Start", command=self.start)
+        button_start = tkinter.Button(self.main_window, text="Start Scan", command=self.start)
         button_stop = tkinter.Button(self.main_window, text="Stop", command=self.stop)
         button_start_server = tkinter.Button(self.main_window, text="Start Server")
 
         button_start.config(height=1, width=15)
         button_stop.config(height=1, width=15)
+        button_start_server.config(height=1, width=15)
 
         button_stop.pack(side=BOTTOM)
         button_start.pack(side=BOTTOM)
+        button_start_server.pack(side=BOTTOM)
 
     def start(self):
         self.start_thread = threading.Thread(target=Start.start)

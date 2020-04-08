@@ -9,8 +9,9 @@ GPIO.setup(8, GPIO.OUT, initial=GPIO.LOW)
 f = open('file.txt', 'w')
 f.write('hello world')
 f.close()
+finished_flag = 0
 
-while not os.path.exists('stop.txt'):
+while not os.path.exists('stop.txt') or finished_flag == 5:
     GPIO.output(8, GPIO.HIGH)
     print('on')
     sleep(1)
