@@ -11,7 +11,7 @@ class TCP_Recieve():
         print(type(host))
         port = 12345  # Reserve a port for your service.
         s.bind((host, port))  # Bind to the port
-        f = open('test.txt', 'wb')
+        f = open('C:/Users/alexm/PycharmProjects/LIDAR/PC/Conversion/test.txt', 'wb')
         print(f)
         s.listen(5)  # Now wait for client connection.
         while True:

@@ -1,5 +1,5 @@
 import paramiko
-from PC.Network.tcp_recieve import TCP_Recieve
+from PC.Conversion.conversion import Conversion
 
 
 class Start:
@@ -13,8 +13,8 @@ class Start:
         stdin, stdout, stderr = ssh_client.exec_command('cd LIDAR/RaspberryPi; python3 blink.py')
         stdin.close()
 
+        Conversion.get_cart_coordinates()
+
         for line in stdout.read().splitlines():
             print(line)
 
-        # TCP_Recieve.get_file()
-        # print(stdout.readlines())
