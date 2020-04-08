@@ -18,7 +18,7 @@ while not os.path.exists('stop.txt') and finished_flag != 5:
     GPIO.output(8, GPIO.LOW)
     print('off')
     sleep(1)
-    finished_flag = + 1
+    finished_flag = finished_flag + 1
     print(finished_flag)
 
 print('should stop blinking')
