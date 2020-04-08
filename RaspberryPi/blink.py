@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 import os.path
+from RaspberryPi.Network.tcp_send import TCP_send
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
@@ -22,4 +23,9 @@ while not os.path.exists('stop.txt') and finished_flag != 5:
     print(finished_flag)
 
 print('should stop blinking')
+
+TCP_send.send_file()
+
+
+
 GPIO.cleanup()
