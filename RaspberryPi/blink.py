@@ -11,7 +11,7 @@ f.write('hello world')
 f.close()
 finished_flag = 0
 
-while not os.path.exists('stop.txt') or finished_flag != 5:
+while not os.path.exists('stop.txt') and finished_flag != 5:
     GPIO.output(8, GPIO.HIGH)
     print('on')
     sleep(1)
