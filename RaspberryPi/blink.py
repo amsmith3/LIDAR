@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 import os.path
-from RaspberryPi.Network.tcp_send import TCP_send
+from Network.tcp_send import TCP_send
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD)
