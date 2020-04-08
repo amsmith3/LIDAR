@@ -11,7 +11,7 @@ class TCP_send():
 
         s.connect((host, port))
         # s.send("Hello server!")
-        f = open('LIDAR/RaspberryPi/Network/test_send.txt', 'rb')
+        f = open('LIDAR/RaspberryPi/Network/polar_coordinates.txt', 'rb')
         print('Sending...')
         l = f.read(1024)
         while (l):
