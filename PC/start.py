@@ -10,7 +10,7 @@ class Start:
         ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         ssh_client.connect(hostname='amsmith', username='pi', password='password')
         # ssh_client.exec_command('cd test; rm stop.txt')
-        stdin, stdout, stderr = ssh_client.exec_command('cd LIDAR/RaspberryPi1; python3 blink.py')
+        stdin, stdout, stderr = ssh_client.exec_command('cd LIDAR/RaspberryPi; python3 blink.py')
         stdin.close()
 
         for line in stdout.read().splitlines():
