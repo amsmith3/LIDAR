@@ -3,6 +3,7 @@ import threading
 from tkinter import *
 from PC.start import Start
 from PC.stop import Stop
+from PC.Network.tcp_recieve import TCP_Recieve
 
 
 class GUI:
@@ -10,6 +11,7 @@ class GUI:
     def __init__(self):
         self.start_thread = None
         self.stop_thread = None
+        self.start_server = None
 
         self.main_window = tkinter.Tk()
         self.main_window.title("Remote LIDAR")
@@ -18,6 +20,7 @@ class GUI:
         # initialize buttons
         button_start = tkinter.Button(self.main_window, text="Start", command=self.start)
         button_stop = tkinter.Button(self.main_window, text="Stop", command=self.stop)
+        button_start_server = tkinter.Button(self.main_window, text="Start Server")
 
         button_start.config(height=1, width=15)
         button_stop.config(height=1, width=15)
@@ -32,6 +35,10 @@ class GUI:
     def stop(self):
         self.stop_thread = threading.Thread(target=Stop.stop)
         self.stop_thread.start()
+
+    def start_server(self):
+        self.start_server = threading.Thread(target=TCP_Recieve.get_file())
+        self.start_server.start()
 
 
 gui = GUI()
