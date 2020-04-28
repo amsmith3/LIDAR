@@ -13,6 +13,7 @@ class Start:
         stdin, stdout, stderr = ssh_client.exec_command('cd LIDAR/RaspberryPi; python3 blink.py')
         stdin.close()
 
+
         Conversion.get_cart_coordinates()
 
         for line in stdout.read().splitlines():

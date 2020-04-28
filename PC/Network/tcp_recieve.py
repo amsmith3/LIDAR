@@ -15,6 +15,8 @@ class TCP_Recieve():
         print(f)
         s.listen(5)  # Now wait for client connection.
         while True:
+            # if f.closed:
+            # f = open('C:/Users/alexm/PycharmProjects/LIDAR/PC/Conversion/polar_coordinates.txt', 'wb')
             c, addr = s.accept()  # Establish connection with client.
             print('Got connection from', addr)
             print("Receiving...")
